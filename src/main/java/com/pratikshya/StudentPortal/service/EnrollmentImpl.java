@@ -1,5 +1,6 @@
 package com.pratikshya.StudentPortal.service;
-import Repo.EnrollmentRepo;
+import com.pratikshya.StudentPortal.Repo.EnrollmentRepo;
+import com.pratikshya.StudentPortal.model.Enrollment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -7,7 +8,14 @@ import java.util.List;
 @Component
 public class EnrollmentImpl {
     @Autowired
-    EnrollmentRepo enrollmentRepo;
+    public EnrollmentRepo enrollmentRepo;
 
-    public List<>
+    public List<Enrollment> getEnrollment() {
+        List<Enrollment> enrollmentList = enrollmentRepo.findAll();
+        return enrollmentList;
+    }
+    public void saveEnrollment(Enrollment enrollment) {
+
+        enrollmentRepo.save(enrollment);
+    }
 }

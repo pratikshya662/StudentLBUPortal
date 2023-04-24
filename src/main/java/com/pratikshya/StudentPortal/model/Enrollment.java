@@ -1,21 +1,23 @@
 package com.pratikshya.StudentPortal.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Enrollment {
-    @Column
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String EId;
+    private long eId;
 
     @Column(nullable = false, unique = true)
-    private String CId;
+    private long cId;
     @Column(nullable = false, unique = true)
-    private  String SId;
+    private  long sId;
 
 
 }
