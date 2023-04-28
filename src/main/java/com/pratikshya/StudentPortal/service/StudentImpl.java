@@ -10,17 +10,14 @@ import java.util.Random;
 public class StudentImpl {
     @Autowired
     StudentRepo studentRepo;
-    public StudentAccount getFName(String fname) {
-        StudentAccount student = studentRepo.findByFName(fname);
-        return student;
-    }
-    public StudentAccount getEmail(String email) {
-        StudentAccount studentList = studentRepo.findByEmail(email);
+
+    public StudentAccount getUsername(String username) {
+        StudentAccount studentList = studentRepo.findByUsername(username);
         return studentList;
     }
     public void createStudent(StudentAccount student){
         Random rd = new Random();
-        student.setSId(rd.nextLong());
+        student.setSid(rd.nextLong());
         studentRepo.save(student);
     }
     public void updateStudent (StudentAccount student){

@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 
 public interface CourseRepo extends JpaRepository<Course, Long> {
-    public List<Course> findByCName(String name);
+    public List<Course> findByCname(String name);
 }

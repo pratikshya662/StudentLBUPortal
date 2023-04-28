@@ -6,9 +6,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StudentRepo extends JpaRepository<StudentAccount, Long> {
-    public StudentAccount findByFName(String fName);
-    public StudentAccount findByEmail(String email);
-    public StudentAccount findBySId(Long sId);
+
+    public StudentAccount findByUsername(String username);
+    public StudentAccount findBySid(Long sid);
 
 
 }

@@ -12,13 +12,13 @@ import lombok.NoArgsConstructor;
 public class Course {
      @Id
      @GeneratedValue(strategy = GenerationType.AUTO)
-     private long cId;
+     private long cid;
      @Column(nullable = false, unique = true)
-     private String cName;
+     private String cname;
      @Column(nullable = false, unique = true)
-     private String cDuration;
+     private String cduration;
      @Column(nullable = false, unique = true)
-     private Long cFee;
+     private Long cfee;
 
 
 }

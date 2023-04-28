@@ -16,7 +16,7 @@ public class CourseImpl {
 
     }
     public List<Course> searchCourse(String name) {
-        List<Course> courseList = courseRepo.findByCName(name);
+        List<Course> courseList = courseRepo.findByCname(name);
         return courseList;
     }
 }

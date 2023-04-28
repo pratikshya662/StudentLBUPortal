@@ -12,12 +12,12 @@ import lombok.NoArgsConstructor;
 public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long eId;
+    private long eid;
 
     @Column(nullable = false, unique = true)
-    private long cId;
+    private long cid;
     @Column(nullable = false, unique = true)
-    private  long sId;
+    private  long sid;
 
 
 }

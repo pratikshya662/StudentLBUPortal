@@ -18,23 +18,18 @@ public class StudentAccount {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Column(nullable = false, unique = true)
-    private long sId;
-    @Column(nullable = false, unique = true)
-    private String fName;
-    @Column(nullable = false, unique = true)
-    private String lName;
-    @Column(nullable = false, unique = true)
-    private String country;
-    @Column(nullable = false, unique = true)
-    private String phone;
+    private long sid;
+    @Column(nullable = false)
+    private String fname;
+    @Column(nullable = false)
+    private String username;
+    @Column(nullable = false)
+    private String lname;
+
     @Column(nullable = false, unique = true)
     private String email; //first word small and then capital first letter
 
-    @Column(nullable = false, unique = true)
-    private Integer age;
-    @Column(nullable = false, unique = true)
-    private String gender;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String password;
 
 
