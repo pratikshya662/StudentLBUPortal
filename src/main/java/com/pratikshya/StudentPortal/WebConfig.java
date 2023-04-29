@@ -11,8 +11,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
-    @Configuration
+@Configuration
     @EnableWebSecurity
     public class WebConfig {
 
@@ -52,10 +53,11 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
         }
 
         @Bean
-        public AuthenticationSuccessHandler myAuthenticationSuccessHandler(){
-            return new MySimpleUrlAuthenticationSuccessHandler();
+        public AuthenticationSuccessHandler myAuthenticationSuccessHandler()
+        {
+            return new SimpleUrlAuthenticationSuccessHandler();
         }
 
 
-    }
 }
+

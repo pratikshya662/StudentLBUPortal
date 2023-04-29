@@ -1,7 +1,6 @@
 package com.pratikshya.StudentPortal;
 
 import com.pratikshya.StudentPortal.Repo.CourseRepo;
-import com.pratikshya.StudentPortal.model.Course;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -18,10 +17,10 @@ import java.util.Locale;
 
 
     @Configuration
-    public class Assorted {
-        private static final Logger log = LoggerFactory.getLogger(Assorted.class);
+    public class BeanConfig {
+        private static final Logger log = LoggerFactory.getLogger(BeanConfig.class);
 
-        Assorted() {
+        BeanConfig() {
         }
         @Bean
         public LocalValidatorFactoryBean getValidator () {

@@ -10,7 +10,7 @@ public class EnrollmentImpl {
     @Autowired
     public EnrollmentRepo enrollmentRepo;
 
-    public List<Enrollment> getEnrollment() {
+    public List<Enrollment> getEnrollment(long studentId) {
         List<Enrollment> enrollmentList = enrollmentRepo.findAll();
         return enrollmentList;
     }
