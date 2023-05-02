@@ -1,4 +1,5 @@
 package com.pratikshya.StudentPortal.controller;
+import com.pratikshya.StudentPortal.model.Course;
 import com.pratikshya.StudentPortal.model.Enrollment;
 import com.pratikshya.StudentPortal.model.StudentAccount;
 import com.pratikshya.StudentPortal.service.CourseImpl;
@@ -52,7 +53,7 @@ public class Controller {
                     SecurityContextHolder.getContext().setAuthentication(null);
                 }
             }
-            return "redirect:/index?";
+            return "redirect:/profile";
         }
         return "redirect:/login?error=true";
     }
@@ -95,7 +96,10 @@ public class Controller {
         User userDetails = (User) authentication.getPrincipal();
         long studentId = Long.valueOf(userDetails.getUsername());
         enrollment.setSid(studentId);
-        enrollmentImpl.saveEnrollment(enrollment);
+
+        Course course = courseImpl.getCourseById(courseid);
+
+        enrollmentImpl.saveEnrollment(enrollment,course.getCfee());
         return "redirect:/enrollments";
     }
 

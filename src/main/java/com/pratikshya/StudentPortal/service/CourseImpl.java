@@ -19,4 +19,7 @@ public class CourseImpl {
         List<Course> courseList = courseRepo.findByCname(name);
         return courseList;
     }
+    public Course getCourseById(String courseid){
+        return courseRepo.findById(Long.valueOf(courseid)).get();
+    }
 }

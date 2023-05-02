@@ -29,7 +29,7 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationSu
             http.authorizeRequests()
                     .requestMatchers("/anonymous*")
                     .anonymous()
-                    .requestMatchers("/login","/register")
+                    .requestMatchers("/login","/register", "/assets/**")
                     .permitAll()
                     .anyRequest()
                     .authenticated()
@@ -55,7 +55,7 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationSu
         @Bean
         public AuthenticationSuccessHandler myAuthenticationSuccessHandler()
         {
-            return new SimpleUrlAuthenticationSuccessHandler();
+            return new MySimpleUrlAuthenticationSuccessHandler();
         }
 
 
