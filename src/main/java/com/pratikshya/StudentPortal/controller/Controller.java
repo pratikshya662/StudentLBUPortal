@@ -18,6 +18,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
+
 @org.springframework.stereotype.Controller
 public class Controller {
     @Autowired
@@ -85,7 +88,13 @@ public class Controller {
         ModelAndView mav = new ModelAndView("enrollments");
         User userDetails = (User) authentication.getPrincipal();
         long studentId = Long.valueOf(userDetails.getUsername());
-        mav.addObject("enrollment",enrollmentImpl.getEnrollment(studentId));
+        List<Enrollment> enrollmentList=enrollmentImpl.getEnrollment(studentId);
+        for(Enrollment enrollment:enrollmentList){
+            long cId=enrollment.getCid();
+            Course course=courseImpl.getCourseById(String.valueOf(cId));
+            enrollment.setCourseDisplay(course.getCname());
+        }
+        mav.addObject("enrollment",enrollmentList);
         return mav;
     }
 
@@ -95,6 +104,7 @@ public class Controller {
         enrollment.setCid(Long.valueOf(courseid));
         User userDetails = (User) authentication.getPrincipal();
         long studentId = Long.valueOf(userDetails.getUsername());
+
         enrollment.setSid(studentId);
 
         Course course = courseImpl.getCourseById(courseid);

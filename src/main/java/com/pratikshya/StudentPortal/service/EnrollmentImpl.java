@@ -29,13 +29,14 @@ public class EnrollmentImpl {
         String cI= "http://localhost:8081/invoices";
         Map cIMap = new HashMap();
         cIMap.put("amount",cfee+"");
-        cIMap.put("type","tution_fee");
+        cIMap.put("type","TUITION_FEES");
         cIMap.put("dueDate","2024-01-24");
 
-        Map cIstudebtMap=new HashMap();
-        cIstudebtMap.put("studentId",enrollment.getSid());
-        cIMap.put("account",cIstudebtMap);
-        ResponseEntity<String> cLibraryAccResponse = restTemplate.postForEntity(cI,cIMap,String.class);
+        Map cIstudentMap=new HashMap();
+        cIstudentMap.put("studentId",enrollment.getSid());
+        cIMap.put("account",cIstudentMap);
+
+        restTemplate.postForEntity(cI,cIMap,String.class);
 
 
     }

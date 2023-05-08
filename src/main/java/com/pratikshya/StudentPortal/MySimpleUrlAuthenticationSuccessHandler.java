@@ -1,4 +1,4 @@
-package com.pratikshya.StudentPortal.bean;
+package com.pratikshya.StudentPortal;
 
 import java.io.IOException;
 import java.util.Collection;

@@ -1,6 +1,7 @@
-package com.pratikshya.StudentPortal.bean;
+package com.pratikshya.StudentPortal;
 
 import com.pratikshya.StudentPortal.Repo.CourseRepo;
+import com.pratikshya.StudentPortal.model.Course;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -52,17 +53,16 @@ import java.util.Locale;
         @Bean
         CommandLineRunner initDatabase(CourseRepo courseRepo) {
             return args -> {
-
-                courseRepo.save(new Course(1, "IT Technical Sales person", "15", (long)10000L));
-                courseRepo.save(new Course(2, "Digital Marketer", "18", (long) 12000L));
-                courseRepo.save(new Course(3, "IT solutions", "18", (long)12000L));
-                courseRepo.save(new Course(4, "Metal Fabricator", "42", (long)24000L));
-               courseRepo.save(new Course(5, "Beauty Theraphist ", "15", (long) 9500L));
-                courseRepo.save(new Course(6, "Animal Care and Welfare Assitant", "15", (long) 8000L));
-                courseRepo.save(new Course(7, "Auto Care Technician", "30", (long) 20500L));
-                courseRepo.save(new Course(8, "Adult Care Worker level 2", "15", (long) 10000L));
+  //             courseRepo.save(new Course(1, "IT Technical Sales person", "15", (long)10000L));
+  //             courseRepo.save(new Course(2, "Digital Marketer", "18", (long) 12000L));
+ //              courseRepo.save(new Course(3, "IT solutions", "18", (long)12000L));
+ //              courseRepo.save(new Course(4, "Metal Fabricator", "42", (long)24000L));
+  //             courseRepo.save(new Course(5, "Beauty Theraphist ", "15", (long) 9500L));
+  //             courseRepo.save(new Course(6, "Animal Care and Welfare Assitant", "15", (long) 8000L));
+  //             courseRepo.save(new Course(7, "Auto Care Technician", "30", (long) 20500L));
+   //            courseRepo.save(new Course(8, "Adult Care Worker level 2", "15", (long) 10000L));
            };
-         };
+         }
     }
 
 

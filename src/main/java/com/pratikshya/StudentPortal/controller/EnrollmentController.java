@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -18,17 +17,16 @@ import java.util.List;
 public class EnrollmentController {
     @Autowired
     EnrollmentImpl enrollmentImpl;
-    @Autowired
-    CourseImpl courseImpl;
     @GetMapping("/enrollments")
     public @ResponseBody List<Enrollment> enrollmentsPage(@RequestBody Authentication authentication){
         User userDetails = (User) authentication.getPrincipal();
         long studentId = Long.valueOf(userDetails.getUsername());
         return enrollmentImpl.getEnrollment(studentId);
     }
-
+    @Autowired
+    CourseImpl courseImpl;
     @GetMapping("/enrol/course/{courseid}")
-    public @ ResponseBody String  enrollmentsPage(Authentication authentication, @RequestBody String courseid){
+    public @ResponseBody String  enrollmentsPage(Authentication authentication, @RequestBody String courseid){
         Enrollment enrollment= new Enrollment();
         enrollment.setCid(Long.valueOf(courseid));
         User userDetails = (User) authentication.getPrincipal();

@@ -14,10 +14,12 @@ public class Enrollment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long eid;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private long cid;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private  long sid;
+   @Transient
+    private String courseDisplay;
 
 
 }

@@ -63,9 +63,6 @@ public class StudentImpl {
         StudentAccount studentDb = studentRepo.findBySid(student.getSid());
         studentDb.setFname(student.getFname());
         studentDb.setLname(student.getLname());
-        studentDb.setId(student.getId());
-        studentDb.setPassword(passwordEncoder.encode(student.getPassword())); //--
-        studentDb.setUsername(student.getUsername());
         studentRepo.save(studentDb);
     }
 

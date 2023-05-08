@@ -1,4 +1,5 @@
-package com.pratikshya.StudentPortal.bean;
+package com.pratikshya.StudentPortal;
+import com.pratikshya.StudentPortal.MySimpleUrlAuthenticationSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
